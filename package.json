@@ -1,0 +1,27 @@
+{
+  "name": "geo-location",
+  "version": "1.0.0",
+  "description": "geo-location service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy": "babel index.es7.js --out-file index.js && now deploy -e NODE_ENV=production",
+    "dev": "babel index.es7.js --watch --out-file index.js & nodemon index.js"
+  },
+  "author": "Pierre Reimertz",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "micro": "^6.0.2"
+  },
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-async-to-generator": "^6.8.0"
+  }
+}
