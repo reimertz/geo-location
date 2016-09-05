@@ -10,6 +10,7 @@ const srv = micro((() => {
     try {
       const response = yield fetch(url);
       const json = yield response.json();
+      res.setHeader('Access-Control-Allow-Origin', 'https://reimertz.co');
 
       res.end(JSON.stringify(json));
     } catch (error) {

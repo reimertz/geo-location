@@ -8,6 +8,7 @@ const srv = micro(async function (req, res) {
     const response = await fetch(url)
     const json = await response.json()
 
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.end(JSON.stringify(json))
   }
 
